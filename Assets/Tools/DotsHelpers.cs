@@ -1,5 +1,6 @@
 ﻿using Unity.Mathematics;
 using Unity.Transforms;
+using UnityEngine;
 
 namespace Coffee.Tools
 {
@@ -25,6 +26,11 @@ namespace Coffee.Tools
         public static bool IsCloseTo(float3 a, float3 b, float thresholdSquared = 0.01f)
         {
             return math.distancesq(a, b) < thresholdSquared;
+        }
+
+        public static float3 V2ToF3(Vector2 v2)
+        {
+            return new float3(v2.x,v2.y,0);
         }
     }
 }

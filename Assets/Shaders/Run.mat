@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SwitchSprite
+  m_Name: Run
   m_Shader: {fileID: 4800000, guid: b5e958483511f2047be98bd08c485c1e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -23,6 +23,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BaseColor:
+        m_Texture: {fileID: 2800000, guid: 2890d52566f627d40ad3ee0d0bd0efc1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 57ef3161f1ccd7c47b367de162a694b5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _TextureSample0:
         m_Texture: {fileID: 2800000, guid: 57ef3161f1ccd7c47b367de162a694b5, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -46,7 +54,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaCutoff: 0.5
-    - _Col: 6
+    - _Col: 8
     - _Float0: 6
     - _Float1: 1
     - _Float2: 10

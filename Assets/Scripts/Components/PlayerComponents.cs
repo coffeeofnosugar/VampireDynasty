@@ -14,9 +14,4 @@ namespace VampireDynasty
     {
         public int Value;
     }
-
-    public struct PlayerMovement : IComponentData
-    {
-        public float2 Value;
-    }
 }

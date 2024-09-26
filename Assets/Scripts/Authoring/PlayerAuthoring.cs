@@ -1,5 +1,4 @@
 ﻿using Unity.Entities;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 namespace VampireDynasty
@@ -15,8 +14,7 @@ namespace VampireDynasty
                 var entity = GetEntity(TransformUsageFlags.Dynamic);
                 
                 AddComponent<PlayerTag>(entity);
-                AddComponent<MoveSpeed>(entity);
-                AddComponent<PlayerMovement>(entity);
+                AddComponent(entity, new MoveSpeed { Value = authoring.moveSpeed });
                 AddComponent(entity, new MaxHealth { Value = authoring.maxHealth });
                 AddComponent(entity, new CurrentHealth { Value = authoring.maxHealth });
             }

@@ -58,12 +58,14 @@ namespace Coffee.Tools
         #region ================================ Jump ================================
 
         
+        public bool IsJumping { get; private set; }
         public event Action<bool> JumpEvent = delegate { };
         
         public void OnJump(InputAction.CallbackContext context)
         {
             if (context.phase is InputActionPhase.Performed or InputActionPhase.Canceled)
             {
+                IsJumping = context.ReadValueAsButton();
                 var isJumping = context.ReadValueAsButton();
                 JumpEvent.Invoke(isJumping);
             }
