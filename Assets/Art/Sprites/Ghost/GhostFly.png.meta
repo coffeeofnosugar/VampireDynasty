@@ -1,30 +1,12 @@
 fileFormatVersion: 2
-guid: 57ef3161f1ccd7c47b367de162a694b5
+guid: 3d68bb791aca1264898d5f01560ba47a
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -8915327726919978405
-    second: Attack_1_0
-  - first:
-      213: 4416717768442454902
-    second: Attack_1_1
-  - first:
-      213: -8053095777402275025
-    second: Attack_1_2
-  - first:
-      213: 4688295478533005478
-    second: Attack_1_3
-  - first:
-      213: 3156989228384878200
-    second: Attack_1_4
-  - first:
-      213: -4176445809780997858
-    second: Attack_1_5
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -43,7 +25,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 1
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -52,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -81,9 +63,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -99,46 +81,20 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Lumin
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -167,127 +123,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack_1_0
+      name: GhostFly_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 155
-        height: 155
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f696847fbca6a094abf37e85c10862ac
-      internalID: -8915327726919978405
+      spriteID: a28bb72885f46aa41a7737d6b48f7b90
+      internalID: -2078267460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1_1
+      name: GhostFly_1
       rect:
         serializedVersion: 2
-        x: 155
+        x: 64
         y: 0
-        width: 155
-        height: 155
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9f7fe74e201d494eafeb955363f0cf3
-      internalID: 4416717768442454902
+      spriteID: 94d8b2dfc9fc48a44b97f65d265b9efa
+      internalID: -449316145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1_2
+      name: GhostFly_2
       rect:
         serializedVersion: 2
-        x: 310
+        x: 128
         y: 0
-        width: 155
-        height: 155
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37b7b283f1f81604d886f83175ca4fdd
-      internalID: -8053095777402275025
+      spriteID: 50a0a64d456a36d489933a0f53c764fb
+      internalID: 915396416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1_3
+      name: GhostFly_3
       rect:
         serializedVersion: 2
-        x: 465
+        x: 192
         y: 0
-        width: 155
-        height: 155
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97dc70c2d61adf343a72b1e789f23fc6
-      internalID: 4688295478533005478
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack_1_4
-      rect:
-        serializedVersion: 2
-        x: 620
-        y: 0
-        width: 155
-        height: 155
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6deaa345759d4924ebf332ca60a2c75f
-      internalID: 3156989228384878200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack_1_5
-      rect:
-        serializedVersion: 2
-        x: 775
-        y: 0
-        width: 155
-        height: 155
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55c1eb464e2fd8740893c651bf782fb9
-      internalID: -4176445809780997858
+      spriteID: c61ddcfd20079ad4b9c2d2cf7716ebec
+      internalID: 1599354414
       vertices: []
       indices: 
       edges: []
@@ -303,12 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack_1_0: -8915327726919978405
-      Attack_1_1: 4416717768442454902
-      Attack_1_2: -8053095777402275025
-      Attack_1_3: 4688295478533005478
-      Attack_1_4: 3156989228384878200
-      Attack_1_5: -4176445809780997858
+      GhostFly_0: -2078267460
+      GhostFly_1: -449316145
+      GhostFly_2: 915396416
+      GhostFly_3: 1599354414
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

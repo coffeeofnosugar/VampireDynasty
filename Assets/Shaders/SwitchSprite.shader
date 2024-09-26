@@ -93,6 +93,7 @@ Shader "Coffee/SwitchSprite"
 
 			sampler2D _BaseColor;
 			CBUFFER_START( UnityPerMaterial )
+			float4 _BaseColor_ST;
 			float _Col;
 			float _Row;
 			float _Speed;
@@ -166,7 +167,7 @@ Shader "Coffee/SwitchSprite"
 				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX( IN );
 				float3 positionWS = IN.positionWS.xyz;
 
-				float2 texCoord9 = IN.texCoord0.xy * float2( 1,1 ) + float2( 0,0 );
+				float2 uv_BaseColor = IN.texCoord0.xy * _BaseColor_ST.xy + _BaseColor_ST.zw;
 				// *** BEGIN Flipbook UV Animation vars ***
 				// Total tiles of Flipbook Texture
 				float fbtotaltiles6 = _Col * _Row;
@@ -194,7 +195,7 @@ Shader "Coffee/SwitchSprite"
 				// UV Offset
 				float2 fboffset6 = float2(fboffsetx6, fboffsety6);
 				// Flipbook UV
-				half2 fbuv6 = texCoord9 * fbtiling6 + fboffset6;
+				half2 fbuv6 = uv_BaseColor * fbtiling6 + fboffset6;
 				// *** END Flipbook UV Animation vars ***
 				int flipbookFrame6 = ( ( int )fbcurrenttileindex6);
 				
@@ -228,12 +229,12 @@ Shader "Coffee/SwitchSprite"
 }
 /*ASEBEGIN
 Version=19603
-Node;AmplifyShaderEditor.RangedFloatNode;7;-1296,-112;Inherit;False;Property;_Col;Col;1;0;Create;True;0;0;0;False;0;False;6;6;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;7;-1296,-112;Inherit;False;Property;_Col;Col;1;0;Create;True;0;0;0;False;0;False;6;4;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;8;-1296,-16;Inherit;False;Property;_Row;Row;2;0;Create;True;0;0;0;False;0;False;1;1;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;10;-1296,80;Inherit;False;Property;_Speed;Speed;3;0;Create;True;0;0;0;False;0;False;0.75;10;0;0;0;1;FLOAT;0
-Node;AmplifyShaderEditor.TextureCoordinatesNode;9;-1392,-240;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.TextureCoordinatesNode;9;-1392,-240;Inherit;False;0;5;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.TFHCFlipBookUVAnimation;6;-880,-112;Inherit;False;0;0;7;0;FLOAT2;0,0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;1;False;6;FLOAT;-1;False;4;FLOAT2;0;FLOAT;1;FLOAT;2;INT;3
-Node;AmplifyShaderEditor.SamplerNode;5;-528,-96;Inherit;True;Property;_BaseColor;BaseColor;0;0;Create;True;0;0;0;False;0;False;-1;None;57ef3161f1ccd7c47b367de162a694b5;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;6;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT3;5
+Node;AmplifyShaderEditor.SamplerNode;5;-528,-96;Inherit;True;Property;_BaseColor;BaseColor;0;0;Create;True;0;0;0;False;0;False;-1;None;3d68bb791aca1264898d5f01560ba47a;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;6;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT3;5
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;0;0,0;Float;False;True;-1;2;ASEMaterialInspector;0;16;Coffee/SwitchSprite;199187dac283dbe4a8cb1ea611d70c58;True;Sprite Lit;0;0;Sprite Lit;6;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;5;RenderPipeline=UniversalPipeline;RenderType=Transparent=RenderType;Queue=Transparent=Queue=0;UniversalMaterialType=Lit;ShaderGraphShader=true;True;0;True;4;d3d11;glcore;gles;gles3;0;False;True;2;5;False;;10;False;;3;1;False;;10;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;2;False;;True;3;False;;True;True;0;False;;0;False;;True;1;LightMode=Universal2D;False;False;0;Hidden/InternalErrorShader;0;0;Standard;3;Vertex Position;1;0;Debug Display;0;0;External Alpha;0;0;0;5;True;False;False;False;False;False;;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;1;0,0;Float;False;False;-1;2;ASEMaterialInspector;0;1;New Amplify Shader;199187dac283dbe4a8cb1ea611d70c58;True;Sprite Normal;0;1;Sprite Normal;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;5;RenderPipeline=UniversalPipeline;RenderType=Transparent=RenderType;Queue=Transparent=Queue=0;UniversalMaterialType=Lit;ShaderGraphShader=true;True;0;True;12;all;0;False;True;2;5;False;;10;False;;3;1;False;;10;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;2;False;;True;3;False;;True;True;0;False;;0;False;;True;1;LightMode=NormalsRendering;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;2;0,0;Float;False;False;-1;2;ASEMaterialInspector;0;1;New Amplify Shader;199187dac283dbe4a8cb1ea611d70c58;True;Sprite Forward;0;2;Sprite Forward;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;5;RenderPipeline=UniversalPipeline;RenderType=Transparent=RenderType;Queue=Transparent=Queue=0;UniversalMaterialType=Lit;ShaderGraphShader=true;True;0;True;12;all;0;False;True;2;5;False;;10;False;;3;1;False;;10;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;2;False;;True;3;False;;True;True;0;False;;0;False;;True;1;LightMode=UniversalForward;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
@@ -246,4 +247,4 @@ WireConnection;6;3;10;0
 WireConnection;5;1;6;0
 WireConnection;0;1;5;0
 ASEEND*/
-//CHKSM=8EB042F1C567FB5ABE7CC8DEA78CA22ED925D2AA
+//CHKSM=5D7D94AFFBAD14335BAA33E77A1D66FA7153E316

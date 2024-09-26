@@ -3,7 +3,7 @@ using Unity.Mathematics;
 
 namespace VampireDynasty
 {
-    public struct EnemyTag : IComponentData { }
+    public struct MonsterTag : IComponentData { }
 
     public struct MoveTarget : IComponentData
     {

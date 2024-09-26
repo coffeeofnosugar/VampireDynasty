@@ -1,7 +1,6 @@
 ﻿using Coffee.Tools;
 using Unity.Entities;
 using Unity.Transforms;
-using UnityEngine;
 
 namespace VampireDynasty
 {
@@ -28,7 +27,7 @@ namespace VampireDynasty
             var speed = SystemAPI.GetComponentRO<MoveSpeed>(Player).ValueRO.Value;
             var deltaTime = SystemAPI.Time.DeltaTime;
 
-            transform.ValueRW.Position += DotsHelpers.V2ToF3(PlayerInputSystem.Instance.Movement) * speed * deltaTime;
+            transform.ValueRW.Position += PlayerInputSystem.Instance.Movement.V2ToF3() * speed * deltaTime;
 
 
             // if (PlayerInputSystem.Instance.IsJumping)

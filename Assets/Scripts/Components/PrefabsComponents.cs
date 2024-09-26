@@ -8,4 +8,9 @@ namespace VampireDynasty
         public Entity IdleSprite;
         public Entity RunSprite;
     }
+
+    public struct MonsterPrefabs : IComponentData
+    {
+        public Entity Ghost;
+    }
 }
