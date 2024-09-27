@@ -1,5 +1,4 @@
 ﻿using Unity.Entities;
-using UnityEngine;
 
 namespace VampireDynasty
 {
@@ -7,6 +6,7 @@ namespace VampireDynasty
     {
         public Entity IdleSprite;
         public Entity RunSprite;
+        public Entity SwordSprite;
     }
 
     public struct MonsterPrefabs : IComponentData

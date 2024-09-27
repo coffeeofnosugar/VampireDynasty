@@ -15,10 +15,10 @@ MonoBehaviour:
   m_CategoryNames:
   - GroundPlane
   - Player
-  - Enemy
   - Weapon
+  - Monster
+  - EnemyDamage
   - Raycasys
-  - 
   - 
   - 
   - 

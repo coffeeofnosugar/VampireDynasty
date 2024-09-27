@@ -3,7 +3,6 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
 using UnityEngine;
-using VHierarchy.Libs;
 
 namespace VampireDynasty
 {
@@ -26,7 +25,7 @@ namespace VampireDynasty
             Player = SystemAPI.GetSingletonEntity<PlayerTag>();
             CurrentSpriteRenderer = SystemAPI.ManagedAPI.GetComponent<SpriteRenderer>(Player);
             
-            var playerSpritesEntity = SystemAPI.GetSingletonRW<PlayerSprites>();
+            var playerSpritesEntity = SystemAPI.GetComponentRW<PlayerSprites>(Player);
             IdleMaterial = SystemAPI.ManagedAPI.GetComponent<SpriteRenderer>(playerSpritesEntity.ValueRO.IdleSprite).material;
             RunMaterial = SystemAPI.ManagedAPI.GetComponent<SpriteRenderer>(playerSpritesEntity.ValueRO.RunSprite).material;
         }

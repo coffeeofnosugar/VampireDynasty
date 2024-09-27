@@ -38,7 +38,7 @@ namespace VampireDynasty
         
         public void Execute(TriggerEvent triggerEvent)
         {
-            Debug.Log($"ITriggerEventsJob");
+            // Debug.Log($"ITriggerEventsJob");
         }
     }
 }

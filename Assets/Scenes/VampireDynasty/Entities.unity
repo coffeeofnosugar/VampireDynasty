@@ -223,9 +223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d6159890324cfe92415fc6010c8ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _idleSprite: {fileID: 6548950431896065594, guid: a5e83509522a55144847304aaea8118d, type: 3}
-  _runSprite: {fileID: 8754536650783780736, guid: faa026ca79fa5bd4585fc215a23d18df, type: 3}
-  _ghost: {fileID: 8754536650783780736, guid: 7c2aedfc702578d45ad6fcccc34fed8c, type: 3}
 --- !u!1001 &1272240392
 PrefabInstance:
   m_ObjectHideFlags: 0
