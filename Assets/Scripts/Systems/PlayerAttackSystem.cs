@@ -8,7 +8,7 @@ namespace VampireDynasty
     public partial class PlayerAttackSystem : SystemBase
     {
         private Entity Player;
-        private float _attackFrequency;
+        private PlayerProperties _playerProperties;
         private Entity _swordSprite;
         
         protected override void OnCreate()
@@ -19,7 +19,7 @@ namespace VampireDynasty
         protected override void OnStartRunning()
         {
             Player = SystemAPI.GetSingletonEntity<PlayerTag>();
-            _attackFrequency = SystemAPI.GetComponentRO<PlayerProperties>(Player).ValueRO.AttackFrequency;
+            _playerProperties = SystemAPI.GetComponentRO<PlayerProperties>(Player).ValueRO;
             _swordSprite = SystemAPI.GetComponentRO<PlayerSprites>(Player).ValueRO.SwordSprite;
         }
         
@@ -30,19 +30,26 @@ namespace VampireDynasty
             var transform = SystemAPI.GetComponentRO<LocalTransform>(Player);
             var deltaTime = SystemAPI.Time.DeltaTime;
 
-            var attackFrequency = SystemAPI.GetComponentRW<AttackFrequency>(Player);
-            attackFrequency.ValueRW.Value -= deltaTime;
-            if (attackFrequency.ValueRO.Value <= 0f)
+            var attackTimer = SystemAPI.GetComponentRW<AttackTimer>(Player);
+            attackTimer.ValueRW.Value -= deltaTime;
+            if (attackTimer.ValueRO.Value <= 0f)
             {
-                attackFrequency.ValueRW.Value = _attackFrequency;
+                attackTimer.ValueRW.Value = _playerProperties.AttackFrequency;
                 var swordEntity = ecb.Instantiate(_swordSprite);
                 
                 // 面朝右
                 if (math.degrees(math.EulerYXZ(transform.ValueRO.Rotation)).y == 0f)
-                    ecb.SetComponent(swordEntity, LocalTransform.FromPosition(transform.ValueRO.Position));
+                {
+                    var spawnPosition = transform.ValueRO.Position + _playerProperties.AttackOffset;
+                    ecb.SetComponent(swordEntity, LocalTransform.FromPosition(spawnPosition));
+                }
                 // 面朝左
                 else
-                    ecb.SetComponent(swordEntity, LocalTransform.FromPositionRotation(transform.ValueRO.Position, quaternion.RotateY(math.PI)));
+                {
+                    var spawnPosition = transform.ValueRO.Position - _playerProperties.AttackOffset;
+                    ecb.SetComponent(swordEntity,
+                        LocalTransform.FromPositionRotation(spawnPosition, quaternion.RotateY(math.PI)));
+                }
             }
             ecb.Playback(EntityManager);
             ecb.Dispose();

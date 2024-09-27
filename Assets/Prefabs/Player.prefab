@@ -275,3 +275,7 @@ MonoBehaviour:
   maxHealth: 20
   moveSpeed: 1
   attackFrequency: 1.5
+  attackOffset:
+    x: 0.5
+    y: 0
+    z: 0

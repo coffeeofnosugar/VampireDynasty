@@ -9,9 +9,10 @@ namespace VampireDynasty
     public struct PlayerProperties : IComponentData
     {
         public float AttackFrequency;
+        public float3 AttackOffset;
     }
     
-    public struct  AttackFrequency : IComponentData
+    public struct  AttackTimer : IComponentData
     {
         public float Value;
     }

@@ -1,5 +1,6 @@
 ﻿using Sirenix.OdinInspector;
 using Unity.Entities;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace VampireDynasty
@@ -16,7 +17,11 @@ namespace VampireDynasty
         [Title("Properties")]
         [SerializeField] private int maxHealth;
         [SerializeField] private float moveSpeed;
+        
+        [Title("Attack")]
         [SerializeField] private float attackFrequency;
+
+        [SerializeField] private float3 attackOffset;
         
         private class Baker : Baker<PlayerAuthoring>
         {
@@ -35,9 +40,10 @@ namespace VampireDynasty
                 });
                 AddComponent(entity, new PlayerProperties
                 {
-                    AttackFrequency = authoring.attackFrequency
+                    AttackFrequency = authoring.attackFrequency,
+                    AttackOffset = authoring.attackOffset
                 });
-                AddComponent(entity, new AttackFrequency { Value = authoring.attackFrequency });
+                AddComponent(entity, new AttackTimer { Value = authoring.attackFrequency });
             }
         }
     }
