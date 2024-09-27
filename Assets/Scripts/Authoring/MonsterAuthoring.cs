@@ -10,7 +10,6 @@ namespace VampireDynasty
         [SerializeField] private GameObject dieSprite;
 
         [Title("Properties")]
-        [SerializeField] private int maxHealth;
         [SerializeField] private float moveSpeed;
         
         private class Baker : Baker<MonsterAuthoring>
@@ -20,8 +19,6 @@ namespace VampireDynasty
                 var entity = GetEntity(TransformUsageFlags.Dynamic);
                 AddComponent<MonsterTag>(entity);
                 AddComponent(entity, new MoveSpeed { Value = authoring.moveSpeed });
-                AddComponent(entity, new MaxHealth { Value = authoring.maxHealth });
-                AddComponent(entity, new CurrentHealth { Value = authoring.maxHealth });
                 AddComponent(entity, new MonsterPrefabs
                 {
                     Ghost = GetEntity(authoring.dieSprite, TransformUsageFlags.None),

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4930468811633577240}
   - component: {fileID: 2006664808733363769}
   - component: {fileID: 1225095466936260578}
+  - component: {fileID: -2070662911955598842}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -270,5 +271,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dieSprite: {fileID: 8754536650783780736, guid: 7c2aedfc702578d45ad6fcccc34fed8c, type: 3}
-  maxHealth: 10
   moveSpeed: 1.2
+--- !u!114 &-2070662911955598842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548950431896065594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0be517771ef04398bc338e9041956a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  isSetHealthBar: 0
+  healthBarOffset:
+    x: 0
+    y: 0
+    z: 0

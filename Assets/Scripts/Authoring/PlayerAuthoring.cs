@@ -15,12 +15,10 @@ namespace VampireDynasty
         [SerializeField] private GameObject _swordSprite;
 
         [Title("Properties")]
-        [SerializeField] private int maxHealth;
         [SerializeField] private float moveSpeed;
         
         [Title("Attack")]
         [SerializeField] private float attackFrequency;
-
         [SerializeField] private float3 attackOffset;
         
         private class Baker : Baker<PlayerAuthoring>
@@ -30,8 +28,6 @@ namespace VampireDynasty
                 var entity = GetEntity(TransformUsageFlags.Dynamic);
                 AddComponent<PlayerTag>(entity);
                 AddComponent(entity, new MoveSpeed { Value = authoring.moveSpeed });
-                AddComponent(entity, new MaxHealth { Value = authoring.maxHealth });
-                AddComponent(entity, new CurrentHealth { Value = authoring.maxHealth });
                 AddComponent(entity, new PlayerSprites()
                 {
                     IdleSprite = GetEntity(authoring._idleSprite, TransformUsageFlags.None),

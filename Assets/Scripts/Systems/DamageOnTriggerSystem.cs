@@ -38,7 +38,8 @@ namespace VampireDynasty
         
         public void Execute(TriggerEvent triggerEvent)
         {
-            // Debug.Log($"ITriggerEventsJob");
+            Entity damageDealingEntity;         // 伤害来源，可能是飞行物，也有可能是玩家
+            Entity damageReceivingEntity;       // 受击者
         }
     }
 }
