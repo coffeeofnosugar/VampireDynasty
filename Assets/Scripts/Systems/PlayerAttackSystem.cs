@@ -2,7 +2,6 @@
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
-using UnityEngine;
 
 namespace VampireDynasty
 {
@@ -46,6 +45,7 @@ namespace VampireDynasty
                     ecb.SetComponent(swordEntity, LocalTransform.FromPositionRotation(transform.ValueRO.Position, quaternion.RotateY(math.PI)));
             }
             ecb.Playback(EntityManager);
+            ecb.Dispose();
         }
     }
 }

@@ -274,4 +274,4 @@ MonoBehaviour:
   _swordSprite: {fileID: 3956917371397568498, guid: b2405a147376b004e835f0eb53d17252, type: 3}
   maxHealth: 20
   moveSpeed: 1
-  attackFrequency: 2
+  attackFrequency: 1.5
