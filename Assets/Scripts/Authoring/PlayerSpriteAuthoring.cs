@@ -25,7 +25,7 @@ namespace VampireDynasty
                 });
                 AddComponent(prefabContainerEntity, new MonsterPrefabs
                 {
-                    Ghost = GetEntity(authoring._ghost, TransformUsageFlags.Dynamic),
+                    Ghost = GetEntity(authoring._ghost, TransformUsageFlags.None),
                 });
             }
         }

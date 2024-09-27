@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4067168155637765356}
   - component: {fileID: 937200935606354822}
   m_Layer: 0
-  m_Name: Ghost_DieSprite
+  m_Name: Ghost_Die
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
