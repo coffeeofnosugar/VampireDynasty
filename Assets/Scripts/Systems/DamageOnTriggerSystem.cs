@@ -25,12 +25,15 @@ namespace VampireDynasty
         public void OnUpdate(ref SystemState state)
         {
             var ecbSingleton = SystemAPI.GetSingleton<EndSimulationEntityCommandBufferSystem.Singleton>();
+            var elapsedTime = SystemAPI.Time.ElapsedTime;
+            
             state.Dependency = new DamageOnTriggerJob
             {
                 DamageOnTriggerLookUp = SystemAPI.GetComponentLookup<DamageOnTrigger>(),
                 AlreadyDamagedEntityLookUp = SystemAPI.GetBufferLookup<AlreadyDamagedEntity>(),
                 DamageBufferElementLookUp = SystemAPI.GetBufferLookup<DamageBufferElement>(),
                 ECB = ecbSingleton.CreateCommandBuffer(state.WorldUnmanaged),
+                ElapsedTime = elapsedTime,
             }.Schedule(SystemAPI.GetSingleton<SimulationSingleton>(), state.Dependency);
         }
     }
@@ -44,6 +47,7 @@ namespace VampireDynasty
         [ReadOnly] public BufferLookup<DamageBufferElement> DamageBufferElementLookUp; // 受击者
 
         public EntityCommandBuffer ECB;
+        public double ElapsedTime;
 
         public void Execute(TriggerEvent triggerEvent)
         {
@@ -71,13 +75,16 @@ namespace VampireDynasty
             {
                 if (alreadyDamagedEntity.Value == damageReceivingEntity) return;
             }
-
             // 缓存伤害值
             var damage = DamageOnTriggerLookUp[damageDealingEntity].Value;
             ECB.AppendToBuffer(damageReceivingEntity, new DamageBufferElement() { Value = damage });
 
             // 存储已经伤害过的实体
-            ECB.AppendToBuffer(damageDealingEntity, new AlreadyDamagedEntity() { Value = damageReceivingEntity });
+            ECB.AppendToBuffer(damageDealingEntity, new AlreadyDamagedEntity()
+            {
+                ResetTime = ConstProperties.DamageApplyFrequency + ElapsedTime,
+                Value = damageReceivingEntity
+            });
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
-using UnityEngine;
 
 namespace VampireDynasty
 {
@@ -38,12 +37,5 @@ namespace VampireDynasty
             ecb.Playback(state.EntityManager);
             ecb.Dispose();
         }
-    }
-
-    [BurstCompile]
-    public partial struct CalculateFrameDamageSystemJob : IJobEntity
-    {
-        [BurstCompile]
-        private void Execute() { }
     }
 }

@@ -60,9 +60,14 @@ namespace VampireDynasty
 
     /// <summary>
     /// <para>烘焙到可造成伤害的Entity上，存储已经造成过伤害的Entity，避免重复伤害</para>
+    /// <param name="ResetTime">
+    /// ElapsedTime加上<see cref="ConstProperties.DamageApplyFrequency"/>
+    /// 该数值在列表中，从索引号0开始依次递增
+    /// </param>
     /// </summary>
     public struct AlreadyDamagedEntity : IBufferElementData
     {
+        public double ResetTime;
         public Entity Value;
     }
 }

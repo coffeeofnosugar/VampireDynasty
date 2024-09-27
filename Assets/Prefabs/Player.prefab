@@ -274,7 +274,7 @@ MonoBehaviour:
   _runSprite: {fileID: 8754536650783780736, guid: faa026ca79fa5bd4585fc215a23d18df, type: 3}
   _swordSprite: {fileID: 3956917371397568498, guid: b2405a147376b004e835f0eb53d17252, type: 3}
   moveSpeed: 1
-  attackFrequency: 1.5
+  attackFrequency: 1.2
   attackOffset:
     x: 0.5
     y: 0
