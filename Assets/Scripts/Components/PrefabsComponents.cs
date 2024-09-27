@@ -11,6 +11,6 @@ namespace VampireDynasty
 
     public struct MonsterPrefabs : IComponentData
     {
-        public Entity Ghost;
+        public Entity DieSprite;
     }
 }

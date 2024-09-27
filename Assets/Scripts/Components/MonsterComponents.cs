@@ -7,6 +7,6 @@ namespace VampireDynasty
 
     public struct MoveTarget : IComponentData
     {
-        public float2 Position;
+        public float3 Position;
     }
 }

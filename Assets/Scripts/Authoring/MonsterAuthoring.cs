@@ -19,10 +19,8 @@ namespace VampireDynasty
                 var entity = GetEntity(TransformUsageFlags.Dynamic);
                 AddComponent<MonsterTag>(entity);
                 AddComponent(entity, new MoveSpeed { Value = authoring.moveSpeed });
-                AddComponent(entity, new MonsterPrefabs
-                {
-                    Ghost = GetEntity(authoring.dieSprite, TransformUsageFlags.None),
-                });
+                AddComponent(entity, new MonsterPrefabs { DieSprite = GetEntity(authoring.dieSprite, TransformUsageFlags.None), });
+                AddComponent<MoveTarget>(entity);
             }
         }
     }
