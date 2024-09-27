@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3454126601500092601}
   - component: {fileID: 2011311832946671388}
   - component: {fileID: 8413171725568266013}
+  - component: {fileID: -4684195105271110082}
   - component: {fileID: 3418033292846649279}
   m_Layer: 0
-  m_Name: SowrdSprite
+  m_Name: Sowrd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,6 +230,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4684195105271110082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956917371397568498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3827d227c2d84d43afcac3f38b17cbb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageValue: 10
 --- !u!114 &3418033292846649279
 MonoBehaviour:
   m_ObjectHideFlags: 0

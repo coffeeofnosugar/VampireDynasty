@@ -38,8 +38,31 @@ namespace VampireDynasty
         public int Value;
     }
     
+    /// <summary>
+    /// <para>烘焙到可受伤的Entity上</para>
+    /// <para>
+    /// 作用：绝大多数的时候都是只有一个数，但是偶尔同一帧会受到两次甚至更多次伤害，所以使用Buffer
+    /// </para>
+    /// </summary>
     public struct DamageBufferElement : IBufferElementData
     {
         public int Value;
+    }
+
+    /// <summary>
+    /// <para>烘焙到可造成伤害的Entity上，设定其照成的伤害</para>
+    /// <para>如：剑的特效、飞行物</para>
+    /// </summary>
+    public struct DamageOnTrigger : IComponentData
+    {
+        public int Value;
+    }
+
+    /// <summary>
+    /// <para>烘焙到可造成伤害的Entity上，存储已经造成过伤害的Entity，避免重复伤害</para>
+    /// </summary>
+    public struct AlreadyDamagedEntity : IBufferElementData
+    {
+        public Entity Value;
     }
 }
