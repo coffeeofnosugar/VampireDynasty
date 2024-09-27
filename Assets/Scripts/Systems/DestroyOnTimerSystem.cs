@@ -19,7 +19,8 @@ namespace VampireDynasty
             var deltaTime = SystemAPI.Time.DeltaTime;
             var ecb = new EntityCommandBuffer(Allocator.Temp);
             
-            foreach (var (destroyTimer, entity) in SystemAPI.Query<RefRW<DestroyTimer>>().WithNone<DestroyEntityTag>().WithAll<Simulate>().WithEntityAccess())
+            foreach (var (destroyTimer, entity) in SystemAPI.Query<RefRW<DestroyTimer>>().WithNone<DestroyEntityTag>()
+                         .WithAll<Simulate>().WithEntityAccess())
             {
                 destroyTimer.ValueRW.Value -= deltaTime;
                 if (destroyTimer.ValueRO.Value <= 0f)
