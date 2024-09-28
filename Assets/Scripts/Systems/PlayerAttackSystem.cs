@@ -20,7 +20,7 @@ namespace VampireDynasty
         {
             Player = SystemAPI.GetSingletonEntity<PlayerTag>();
             _playerProperties = SystemAPI.GetComponentRO<PlayerProperties>(Player).ValueRO;
-            _swordSprite = SystemAPI.GetComponentRO<PlayerSprites>(Player).ValueRO.SwordSprite;
+            _swordSprite = SystemAPI.GetComponentRO<PlayerSprites>(Player).ValueRO.WeaponSprite;
         }
         
         protected override void OnUpdate()

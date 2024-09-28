@@ -11,7 +11,6 @@ namespace VampireDynasty
     
     public struct HealthBarOffset : IComponentData
     {
-        public bool IsSet;
         public float3 Value;
     }
 }

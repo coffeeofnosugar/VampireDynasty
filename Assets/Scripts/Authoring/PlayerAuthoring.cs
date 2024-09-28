@@ -2,17 +2,18 @@
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace VampireDynasty
 {
     public class PlayerAuthoring : MonoBehaviour
     {
         [Title("AnimationSprite")]
-        [SerializeField] private GameObject _idleSprite;
-        [SerializeField] private GameObject _runSprite;
+        [SerializeField] private GameObject idleSprite;
+        [SerializeField] private GameObject runSprite;
         
         [Title("WeaponSprite")]
-        [SerializeField] private GameObject _swordSprite;
+        [SerializeField] private GameObject swordSprite;
 
         [Title("Properties")]
         [SerializeField] private float moveSpeed;
@@ -30,9 +31,9 @@ namespace VampireDynasty
                 AddComponent(entity, new MoveSpeed { Value = authoring.moveSpeed });
                 AddComponent(entity, new PlayerSprites()
                 {
-                    IdleSprite = GetEntity(authoring._idleSprite, TransformUsageFlags.None),
-                    RunSprite = GetEntity(authoring._runSprite, TransformUsageFlags.None),
-                    SwordSprite = GetEntity(authoring._swordSprite, TransformUsageFlags.None),
+                    IdleSprite = GetEntity(authoring.idleSprite, TransformUsageFlags.None),
+                    RunSprite = GetEntity(authoring.runSprite, TransformUsageFlags.None),
+                    WeaponSprite = GetEntity(authoring.swordSprite, TransformUsageFlags.None),
                 });
                 AddComponent(entity, new PlayerProperties
                 {

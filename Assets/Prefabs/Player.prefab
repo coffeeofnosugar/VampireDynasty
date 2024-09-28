@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8794551020323757383}
   - component: {fileID: 3353065572934700525}
   - component: {fileID: 5473002896806351562}
+  - component: {fileID: 5061009173187452856}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -270,11 +271,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbf6b590c544bf39484fa1ee2243bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _idleSprite: {fileID: 6548950431896065594, guid: a5e83509522a55144847304aaea8118d, type: 3}
-  _runSprite: {fileID: 8754536650783780736, guid: faa026ca79fa5bd4585fc215a23d18df, type: 3}
-  _swordSprite: {fileID: 3956917371397568498, guid: b2405a147376b004e835f0eb53d17252, type: 3}
+  idleSprite: {fileID: 6548950431896065594, guid: a5e83509522a55144847304aaea8118d, type: 3}
+  runSprite: {fileID: 8754536650783780736, guid: faa026ca79fa5bd4585fc215a23d18df, type: 3}
+  swordSprite: {fileID: 3956917371397568498, guid: b2405a147376b004e835f0eb53d17252, type: 3}
   moveSpeed: 1
-  attackFrequency: 1.2
+  attackFrequency: 999999
   attackOffset:
     x: 0.5
     y: 0
@@ -291,9 +292,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be517771ef04398bc338e9041956a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
-  isSetHealthBar: 1
-  healthBarOffset:
-    x: 0
-    y: 0.2
-    z: 0
+  maxHealth: 99999
+--- !u!114 &5061009173187452856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8917076688344596010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e562168be3b49059e9805c06c41cf81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

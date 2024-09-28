@@ -72,9 +72,8 @@ namespace VampireDynasty
             // 避免重复伤害
             var alreadyDamagedEntityBuffer = AlreadyDamagedEntityLookUp[damageDealingEntity];
             foreach (var alreadyDamagedEntity in alreadyDamagedEntityBuffer)
-            {
                 if (alreadyDamagedEntity.Value == damageReceivingEntity) return;
-            }
+            
             // 缓存伤害值
             var damage = DamageOnTriggerLookUp[damageDealingEntity].Value;
             ECB.AppendToBuffer(damageReceivingEntity, new DamageBufferElement() { Value = damage });

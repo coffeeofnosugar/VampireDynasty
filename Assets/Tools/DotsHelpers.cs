@@ -1,6 +1,8 @@
 ﻿using Unity.Mathematics;
 using Unity.Transforms;
 using UnityEngine;
+using Random = Unity.Mathematics.Random;
+
 
 namespace Coffee.Tools
 {
@@ -24,8 +26,22 @@ namespace Coffee.Tools
 
 
         public static bool IsCloseTo(float3 a, float3 b, float thresholdSquared = 0.01f)
+                => math.distancesq(a, b) < thresholdSquared;
+
+        #region Random
+
+        public static float GetRandomFloat(ref Random random, float min = 0f, float max = 1f)
+                => random.NextFloat(min, max);
+        
+        public static float GetRandomAngle(ref Random random)
+                => GetRandomFloat(ref random, 0, math.PI2);
+
+        public static float3 GetRandomPosition(ref Random random, float minRadius, float3 center)
         {
-            return math.distancesq(a, b) < thresholdSquared;
+            
+            return float3.zero;
         }
+
+        #endregion
     }
 }
