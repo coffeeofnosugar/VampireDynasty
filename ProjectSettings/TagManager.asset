@@ -47,11 +47,11 @@ TagManager:
   - name: Environment
     uniqueID: 1341440839
     locked: 0
-  - name: Player
-    uniqueID: 1155035593
-    locked: 0
   - name: Monster
     uniqueID: 2733499307
+    locked: 0
+  - name: Player
+    uniqueID: 1155035593
     locked: 0
   - name: Weapon
     uniqueID: 2099781325
