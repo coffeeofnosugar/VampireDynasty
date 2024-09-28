@@ -44,6 +44,7 @@ namespace VampireDynasty
     /// 作用：绝大多数的时候都是只有一个数，但是偶尔同一帧会受到两次甚至更多次伤害，所以使用Buffer
     /// </para>
     /// </summary>
+    [InternalBufferCapacity(10)]
     public struct DamageBufferElement : IBufferElementData
     {
         public int Value;

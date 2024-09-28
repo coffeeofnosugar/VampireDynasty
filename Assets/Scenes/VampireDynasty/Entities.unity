@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomSeed: 1
-  spawnInterval: 0.2
+  spawnInterval: 40.58
   spawnWide: 5
   spawnHigh: 3
   monsterPrefabs:

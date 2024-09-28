@@ -246,7 +246,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1155035593
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -274,7 +274,7 @@ MonoBehaviour:
   idleSprite: {fileID: 6548950431896065594, guid: a5e83509522a55144847304aaea8118d, type: 3}
   runSprite: {fileID: 8754536650783780736, guid: faa026ca79fa5bd4585fc215a23d18df, type: 3}
   swordSprite: {fileID: 3956917371397568498, guid: b2405a147376b004e835f0eb53d17252, type: 3}
-  moveSpeed: 1
+  moveSpeed: 10
   attackFrequency: 999999
   attackOffset:
     x: 0.5
