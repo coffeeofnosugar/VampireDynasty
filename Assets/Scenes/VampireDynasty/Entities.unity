@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomSeed: 1
-  spawnInterval: 40.58
+  spawnInterval: 0.2
   spawnWide: 5
   spawnHigh: 3
   monsterPrefabs:
@@ -320,10 +320,6 @@ PrefabInstance:
     - target: {fileID: 3886362045370075829, guid: 90b97adf7b4326d4cb5e7a4034e1a876, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8794551020323757383, guid: 90b97adf7b4326d4cb5e7a4034e1a876, type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8917076688344596010, guid: 90b97adf7b4326d4cb5e7a4034e1a876, type: 3}
       propertyPath: m_Name

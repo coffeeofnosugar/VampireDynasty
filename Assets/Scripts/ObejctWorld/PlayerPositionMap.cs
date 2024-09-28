@@ -7,14 +7,14 @@ namespace VampireDynasty
 {
     public class PlayerPositionMap : MonoBehaviour
     {
-        private EntityManager _entityManager;
+        private EntityManager entityManager;
         private EntityQuery playerEntityQuery;
         private Entity playerEntity;
         
         private async void Start()
         {
-            _entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-            playerEntityQuery = _entityManager.CreateEntityQuery(typeof(PlayerTag));
+            entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
+            playerEntityQuery = entityManager.CreateEntityQuery(typeof(PlayerTag));
             while (playerEntity == Entity.Null)
             {
                 await UniTask.NextFrame();
@@ -25,8 +25,8 @@ namespace VampireDynasty
 
         private void Update()
         {
-            if (playerEntity == Entity.Null) return;
-            transform.position = _entityManager.GetComponentData<LocalTransform>(playerEntity).Position;
+            if (!entityManager.Exists(playerEntity)) return;
+            transform.position = entityManager.GetComponentData<LocalTransform>(playerEntity).Position;
         }
     }
 }

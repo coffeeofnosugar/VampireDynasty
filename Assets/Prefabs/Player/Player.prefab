@@ -271,11 +271,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbf6b590c544bf39484fa1ee2243bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleSprite: {fileID: 6548950431896065594, guid: a5e83509522a55144847304aaea8118d, type: 3}
-  runSprite: {fileID: 8754536650783780736, guid: faa026ca79fa5bd4585fc215a23d18df, type: 3}
-  swordSprite: {fileID: 3956917371397568498, guid: b2405a147376b004e835f0eb53d17252, type: 3}
-  moveSpeed: 10
-  attackFrequency: 999999
+  materials:
+  - {fileID: 2100000, guid: f7331fa3576980644923cdd0c3d131d9, type: 2}
+  - {fileID: 2100000, guid: 5397f6d8ea3e07f4d931b3c2c3afc033, type: 2}
+  weapon: {fileID: 3956917371397568498, guid: b2405a147376b004e835f0eb53d17252, type: 3}
+  moveSpeed: 2
+  attackFrequency: 1.2
   attackOffset:
     x: 0.5
     y: 0
@@ -292,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be517771ef04398bc338e9041956a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 99999
+  maxHealth: 20
 --- !u!114 &5061009173187452856
 MonoBehaviour:
   m_ObjectHideFlags: 0

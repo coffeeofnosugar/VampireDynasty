@@ -17,25 +17,24 @@ namespace VampireDynasty
 	public class GroundLoop : MonoBehaviour
 	{
 		[SerializeField] private Transform playerTransform;
-		[SerializeField] private List<Transform> ground;
-
-		[SerializeField] private Transform currentGround;
+		
+		private readonly List<Transform> ground = new List<Transform>();
+		private Transform currentGround;
 		private bool isRight;
 		private bool isTop;
 		
 		private void Awake()
 		{
 			for (int i = 0; i < 4; i++)
-			{
 				ground.Add(transform.GetChild(i));
-			}
+			
 			currentGround = ground[0];
 		}
 
 		private void Update()
 		{
-			isRight = currentGround.position.x >= playerTransform.position.x;
-			isTop = currentGround.position.y >= playerTransform.position.y;
+			isRight = playerTransform.position.x >= currentGround.position.x;
+			isTop = playerTransform.position.y >= currentGround.position.y;
 
 			UpdateGroundPosition();
 		}

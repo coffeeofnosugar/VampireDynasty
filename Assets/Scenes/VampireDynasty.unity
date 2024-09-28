@@ -4578,8 +4578,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1275014176}
-  ground: []
-  currentGround: {fileID: 0}
 --- !u!4 &3195095648092790887
 Transform:
   m_ObjectHideFlags: 0

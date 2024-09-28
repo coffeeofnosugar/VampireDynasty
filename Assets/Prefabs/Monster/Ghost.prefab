@@ -271,7 +271,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c18118f40540af843a2618860db258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dieSprite: {fileID: 8754536650783780736, guid: 7c2aedfc702578d45ad6fcccc34fed8c, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 4ee4ae52cd2be9e4c8667ed911c2dad9, type: 2}
+  - {fileID: 2100000, guid: 9d88792b7cd422044a4be004a33ea3c1, type: 2}
   moveSpeed: 0.5
 --- !u!114 &-2070662911955598842
 MonoBehaviour:

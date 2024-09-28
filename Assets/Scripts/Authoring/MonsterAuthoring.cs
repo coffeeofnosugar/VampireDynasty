@@ -7,7 +7,7 @@ namespace VampireDynasty
     public class MonsterAuthoring : MonoBehaviour
     {
         [Title("AnimationSprites")]
-        [SerializeField] private GameObject dieSprite;
+        [SerializeField] private Material[] materials;
 
         [Title("Properties")]
         [SerializeField] private float moveSpeed;
@@ -19,7 +19,9 @@ namespace VampireDynasty
                 var entity = GetEntity(TransformUsageFlags.Dynamic);
                 AddComponent<MonsterTag>(entity);
                 AddComponent(entity, new MoveSpeed { Value = authoring.moveSpeed });
-                AddComponent(entity, new MonsterSprites { DieSprite = GetEntity(authoring.dieSprite, TransformUsageFlags.None), });
+                var animationMaterials = AddBuffer<MonsterAnimationMaterials>(entity);
+                foreach (var material in authoring.materials)
+                    animationMaterials.Add(new MonsterAnimationMaterials(){ Material = material });
                 AddComponent<MoveTarget>(entity);
             }
         }

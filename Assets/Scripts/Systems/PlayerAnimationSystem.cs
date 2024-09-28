@@ -1,4 +1,5 @@
 ﻿using Coffee.Tools;
+using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -11,13 +12,12 @@ namespace VampireDynasty
         private Entity Player;
         private SpriteRenderer CurrentSpriteRenderer;
         
-        private Material IdleMaterial;
-        private Material RunMaterial;
+        private NativeArray<PlayerAnimationMaterials> Materials;
         
         protected override void OnCreate()
         {
             RequireForUpdate<PlayerTag>();
-            RequireForUpdate<PlayerSprites>();
+            RequireForUpdate<PlayerWeapon>();
         }
 
         protected override void OnStartRunning()
@@ -25,9 +25,8 @@ namespace VampireDynasty
             Player = SystemAPI.GetSingletonEntity<PlayerTag>();
             CurrentSpriteRenderer = SystemAPI.ManagedAPI.GetComponent<SpriteRenderer>(Player);
             
-            var playerSpritesEntity = SystemAPI.GetComponentRW<PlayerSprites>(Player);
-            IdleMaterial = SystemAPI.ManagedAPI.GetComponent<SpriteRenderer>(playerSpritesEntity.ValueRO.IdleSprite).material;
-            RunMaterial = SystemAPI.ManagedAPI.GetComponent<SpriteRenderer>(playerSpritesEntity.ValueRO.RunSprite).material;
+            Materials = SystemAPI.GetBuffer<PlayerAnimationMaterials>(Player).ToNativeArray(Allocator.Persistent);
+            UnityObjectRef<Material> temp = Materials[0].Material;
         }
 
         protected override void OnUpdate()
@@ -38,7 +37,7 @@ namespace VampireDynasty
             
             if (math.abs(playerMovement.x) > .1f || math.abs(playerMovement.y) > .1f)
             {
-                CurrentSpriteRenderer.material = RunMaterial;
+                CurrentSpriteRenderer.material = Materials[1].Material;
                 
                 // 改变朝向
                 if (playerMovement.x > .1f)
@@ -47,9 +46,7 @@ namespace VampireDynasty
                     transform.ValueRW.Rotation = quaternion.RotateY(math.PI);
             }
             else
-            {
-                CurrentSpriteRenderer.material = IdleMaterial;
-            }
+                CurrentSpriteRenderer.material = Materials[0].Material;
         }
     }
 }

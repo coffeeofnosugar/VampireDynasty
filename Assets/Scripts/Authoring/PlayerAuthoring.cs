@@ -9,11 +9,10 @@ namespace VampireDynasty
     public class PlayerAuthoring : MonoBehaviour
     {
         [Title("AnimationSprite")]
-        [SerializeField] private GameObject idleSprite;
-        [SerializeField] private GameObject runSprite;
+        [SerializeField] private Material[] materials;
         
         [Title("WeaponSprite")]
-        [SerializeField] private GameObject swordSprite;
+        [SerializeField] private GameObject weapon;
 
         [Title("Properties")]
         [SerializeField] private float moveSpeed;
@@ -29,11 +28,13 @@ namespace VampireDynasty
                 var entity = GetEntity(TransformUsageFlags.Dynamic);
                 AddComponent<PlayerTag>(entity);
                 AddComponent(entity, new MoveSpeed { Value = authoring.moveSpeed });
-                AddComponent(entity, new PlayerSprites()
+                var animationMaterials = AddBuffer<PlayerAnimationMaterials>(entity);
+                foreach (var material in authoring.materials)
+                    animationMaterials.Add(new PlayerAnimationMaterials() { Material = material });
+                
+                AddComponent(entity, new PlayerWeapon()
                 {
-                    IdleSprite = GetEntity(authoring.idleSprite, TransformUsageFlags.None),
-                    RunSprite = GetEntity(authoring.runSprite, TransformUsageFlags.None),
-                    WeaponSprite = GetEntity(authoring.swordSprite, TransformUsageFlags.None),
+                    Weapon = GetEntity(authoring.weapon, TransformUsageFlags.None),
                 });
                 AddComponent(entity, new PlayerProperties
                 {
